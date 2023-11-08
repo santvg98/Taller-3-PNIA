@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso al sistema</title>
+</head>
+<body>
+    <h3>Digite sus credenciales de acceso</h3>
+    <br>
+    <form action="/login" method="post">
+        <label for="id">Id Usuario: </label>
+        <input required type="text" id="id" name="id">
+        <br>
+        <label for="contra">Contraseña: </label>
+        <input required type="password" id="contra" name="contra">
+        <br><br>
+        <input type="submit" value="Ingresar">
+    </form>
+    <br>
+    <h2>{{msg}}</h2>
+</body>
+</html>

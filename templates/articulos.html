@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de artículos</title>
+</head>
+<body>
+    <a href="/agregararticulo">Agregar un nuevo artículo</a>
+    <br><br>
+    <table border>
+        <thead>
+            <tr>
+                <th>Id Artículo</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Saldo</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for art in res %}
+                <tr>
+                    <td>{{art[0]}}</td>
+                    <td>{{art[1]}}</td>
+                    <td>{{art[2]}}</td>
+                    <td>{{art[3]}}</td>
+                    <td>
+                        <img class="img-thumbnail" width="100" height="100" src="uploads/{{art[4]}}" alt="">
+                    </td>
+                    <td>
+                        <a href="editararticulo/{{art[0]}}">Editar</a>
+                    </td>
+                    <td>
+                        <a onclick="return confirm('¿Seguro elimina este artículo?')" href="borrararticulo/{{art[0]}}">Eliminar</a>
+                    </td>    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/principal">Regresar</a>
+</body>
+</html>
